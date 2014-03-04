@@ -14,14 +14,12 @@ namespace finder
 {
     public partial class Form1 : Form
     {
-        DirectoryInfo dir = new DirectoryInfo(@"D:\Ali");
-        String[] files = Directory.GetFiles(@"D:\Ali");
-        String[] folders = Directory.GetDirectories(@"D:\Ali");
+        DirectoryInfo dir = new DirectoryInfo(@"G:\breezy.kz");
+        String[] files = Directory.GetFiles(@"G:\breezy.kz");
+        String[] folders = Directory.GetDirectories(@"G:\breezy.kz");
         List<string> listFilesFound = new List<string>();
 
-        private Point mouseOffset;
-        private bool isMouseDown = false;
-
+        bool flag = false;
         
         public Form1()
         {
@@ -35,16 +33,7 @@ namespace finder
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox1.Visible = true;
-            listBox1.Items.Clear();
-            foreach (var folder in folders)
-                listBox1.Items.Add(folder);
-
-            foreach (var file in files)
-            {
-                var res = Path.GetFileName(file);
-                listBox1.Items.Add(file);
-            }
+            
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
@@ -89,50 +78,83 @@ namespace finder
                 Console.WriteLine(exp.Message);
             }
         }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
-            base.Capture = false;
-            this.Opacity = 0.6; //добавил
-            Message m = Message.Create(base.Handle, 161, new IntPtr(2), IntPtr.Zero);
-            this.WndProc(ref m);
-            /*
-            int xOffset;
-            int yOffset;
 
-            if (e.Button == MouseButtons.Left)
+        private void xButton1_Click(object sender, EventArgs e)
+        {
+            listBox1.Visible = true;
+            listBox1.Items.Clear();
+            foreach (var folder in folders)
+                listBox1.Items.Add(folder);
+
+            foreach (var file in files)
             {
-                xOffset = -e.X - SystemInformation.FrameBorderSize.Width;
-                yOffset = -e.Y - SystemInformation.FrameBorderSize.Height;
-                mouseOffset = new Point(xOffset, yOffset);
-                isMouseDown = true;
+                var res = Path.GetFileName(file);
+                listBox1.Items.Add(file);
             }
+        }
 
-            if (e.Button == MouseButtons.Right)
-                this.Opacity = 0.5;
-             */ 
-        }
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            /*
-            if (isMouseDown)
+
+        }
+
+        private void xButton2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void xButton3_Click(object sender, EventArgs e)
+        {
+            if (flag == false)
             {
-                Point mousePos = Control.MousePosition;
-                mousePos.Offset(mouseOffset.X, mouseOffset.Y);
-                Location = mousePos;
+                for (int i = 0; i <= 18; i++)
+                {
+                    panel2.Location = new Point(panel2.Location.X + i, panel2.Location.Y);
+                    System.Threading.Thread.Sleep(10);
+                }
+                flag = true;
+                xButton3.Text = "<";
             }
-             */ 
+            else
+            {
+                for (int i = 0; i <= 18; i++)
+                {
+                    panel2.Location = new Point(panel2.Location.X - i, panel2.Location.Y);
+                    System.Threading.Thread.Sleep(10);
+                }
+                flag = false;
+                xButton3.Text = ">";
+            }
         }
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
+
+        private void xButton2_Click_1(object sender, EventArgs e)
         {
-            // Changes the isMouseDown field so that the form does
-            // not move unless the user is pressing the left mouse button.
-                
-                this.Opacity = 1;
-                textBox1.Text = "UP";
+            Close();
         }
+
+        private void xButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xButton4_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
+            textBox2.Text = folderBrowserDialog1.SelectedPath;
+        }
+
+
+
+
+
+
     }
 }

@@ -117,21 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="fileSystemWatcher1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAGYktHRAD/AP8A/6C9p5MAAAG9SURBVDhPY2CAgvDocM/SstIV02dMvz5j1oybFVUVG2JiYqJh
-        8njphISEolWrV3168ODB/+fPn4PxkydP/m/asvlnSkpKD17N/v7+XgsWLfx47Pjx/3B8AsiG4hWrVv4E
-        uiQdpyGZWVkLV61Z/X/d+nX/121Yj4Y3gPkFhYU7cRpQVlFxbNbcOf9nz5v7f868ef/nzp//f+4CJAzk
-        NzQ23nFwcODAakhFdfXxeQsX/p+3aOH/+WC8CIEXL/q/YPHi/03NzXcsLS05sRpQUla2aOXq1f+XrlgB
-        wStXgvEyKF6+atX/6oaGXTi9EBkZ6btizZpP23ft+r9p69b/GzZv/r9xyxYwe+uOHf/XbtjwMzExMQdv
-        TGTl5LRv277j+1FgTBw5duz/4SNHgPjo/1179v6Kjo27npNT0k0wPQDjO62nr2/vkiVLHy9ZuuzphIkT
-        D+fk5JRp6RhUGhpbPpszd/FBMTExcYIGYVPQ2TNlh4CA0OHw8PCr5BrCJSMjtw9o+H+gIbdkZGSkyXHJ
-        wBjCA3SqKhCbA7EjlNaTkZE9BfJOVFTUMWK9wgZUKA/EDkBcDMSbpKVlHgsICNQBAM9lFFNGNn+xAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAABAMMOAADDDgAAAAAAAAAA
@@ -1264,4 +1253,10 @@
         //////////////////////////////////8=
 </value>
   </data>
+  <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>316, 17</value>
+  </metadata>
+  <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>429, 17</value>
+  </metadata>
 </root>
