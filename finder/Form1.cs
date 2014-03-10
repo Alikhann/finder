@@ -59,18 +59,24 @@ namespace finder
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string asd = textBox1.Text;
-
+            
         }
 
-        private void DirSearch(string sDir) 
+        private void DirSearch(string sDir, string file) 
         {
             try
             {
                 foreach (string d in Directory.GetDirectories(sDir))
                 {
                     foreach (string f in Directory.GetFiles(d))
-                        listBox1.Items.Add(f);
-                    DirSearch(d);
+                    {
+                        if (Path.GetFileName(f).Equals(file))
+                        {
+                            listBox1.Items.Add(f);
+                            DirSearch(d, file);
+                        }
+                        else DirSearch(d, file);
+                    }
                 }
             }
             catch (System.Exception exp)
@@ -87,14 +93,16 @@ namespace finder
         {
             listBox1.Visible = true;
             listBox1.Items.Clear();
-            foreach (var folder in folders)
+            /*foreach (var folder in folders)
                 listBox1.Items.Add(folder);
 
             foreach (var file in files)
             {
                 var res = Path.GetFileName(file);
                 listBox1.Items.Add(file);
-            }
+            }*/
+
+            DirSearch(textBox2.Text, textBox1.Text);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -149,6 +157,11 @@ namespace finder
         {
             folderBrowserDialog1.ShowDialog();
             textBox2.Text = folderBrowserDialog1.SelectedPath;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 
